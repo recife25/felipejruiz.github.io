@@ -1,11 +1,111 @@
-<h3>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Felipe J. Ruiz — Portfolio Coming Soon</title>
 
-Welcome — Portfolio Coming Soon
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: #f1f5f9;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
 
-This site is currently under construction.
-A full portfolio showcasing my work in automation, QA, AI workflows, and systems engineering will be available soon.
-Additional features and technical write‑ups will be added as the site evolves.
+        h1 {
+            font-size: 2.4rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
 
-Thank you for visiting — stay tuned.
+        h2 {
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-top: 0;
+            opacity: 0.85;
+        }
 
-</h3>
+        p {
+            max-width: 600px;
+            line-height: 1.6;
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            padding: 20px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .pulse {
+            margin-top: 20px;
+            width: 14px;
+            height: 14px;
+            background-color: #38bdf8;
+            border-radius: 50%;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.6); opacity: 0.4; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        footer {
+            position: absolute;
+            bottom: 20px;
+            font-size: 0.85rem;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Portfolio Coming Soon</h1>
+        <h2>Felipe J. Ruiz — Systems & Automation Engineer</h2>
+
+        <p id="message">
+            This site is currently under construction.<br>
+            A full portfolio showcasing my work in automation, QA, AI workflows, and systems engineering will be available soon.<br>
+            Additional features and technical write‑ups will be added as the site evolves.<br><br>
+            Thank you for visiting — stay tuned.
+        </p>
+
+        <div class="pulse"></div>
+    </div>
+
+    <footer>
+        © <span id="year"></span> Felipe J. Ruiz — felipejruiz.com
+    </footer>
+
+    <script>
+        // Auto-update year
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        // Optional: subtle text fade-in effect
+        const msg = document.getElementById("message");
+        msg.style.opacity = 0;
+        setTimeout(() => {
+            msg.style.transition = "opacity 1.5s";
+            msg.style.opacity = 1;
+        }, 300);
+    </script>
+
+</body>
+</html>
